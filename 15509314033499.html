@@ -115,7 +115,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Jim Zhang的旅行</div>
+        <div class="flex-col header-title ellipsis">Hello World</div>
         
         <div class="search-wrap" id="search-wrap" style="display:none;">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -126,77 +126,62 @@
                 <i class="icon icon-lg icon-search"></i>
             </a>
         </div>
-
+        
     </div>
 </header>
 <header class="content-header index-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Jim Zhang的旅行</h1>
-        <h5 class="subtitle">写在这里，以免你忘记。</h5>
+        <h1 class="title"></h1>
+        <h5 class="subtitle"></h5>
     </div>
+
 </header>
 
 <div class="container body-wrap">
 
-    <ul class="post-list">
-    
-    
+    <article class="post-article article-type-post fade in %> fade" itemprop="blogPost">
 
-        <li class="post-list-item fade">
-            <article id="post-hello-world" class="article-card article-type-post" itemprop="blogPost">
-
-			    <div class="post-meta">
-			        <time class="post-time" title="2019-02-20 22:21:50" datetime="2019-02-23T22:16:43+08:00" itemprop="datePublished">2019/2/23</time>
-			    </div>
-
-			    <h3 class="post-title" itemprop="name">
-			      <a class="post-title-link" href="15509314033499.html">Hello World</a>
-			    </h3>
-  
-			    <div class="post-content" id="post-content" itemprop="postContent">
-			        <p>博客新家，以后就在这里安静的码字。</p>
+    <div class="post-card">
+        <h1 class="post-card-title">Hello World</h1>
+        <div class="post-meta">
+        	<time class="post-time" title="2019/2/23" datetime="<%- date_xml(post.date) %>"  itemprop="datePublished">2019/2/23</time>
+        </div>
+        
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>博客新家，以后就在这里安静的码字。</p>
 
 <p>Hello World！！！</p>
 
-					
-			    </div>
+        </div>
 
-			    
-			    <div class="post-footer">
-			    	<ul class="article-tag-list">
-			    		
-			    		<li class="article-tag-list-item">
-			    			<a class="article-tag-list-link waves-effect waves-button" href="%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94.html">个人随笔</a>
-			    		</li>
-			    		
-			    		
-			    	</ul>
-			    </div>
-			    
+        <div class="post-footer">
+	    	<ul class="article-tag-list">
+	    		
+	    		<li class="article-tag-list-item">
+	    			<a class="article-tag-list-link waves-effect waves-button" href="%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94.html">个人随笔</a>
+	    		</li>
+	    		
+	    		
+	    	</ul>
+	    </div>
 
-			</article> 
-        </li>
+    </div>
 
-	
-    
-    </ul>
-
-	<nav id="page-nav">
-		<div class="inner">
-			 
-			
-		</div>
+    <nav class="post-nav flex-row flex-justify-between">
+    	
+	      
+		  
 	</nav>
 
+</article>
 </div>
-
-
 
 </main>
 
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
 </script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         var toc=$("toc");
@@ -205,6 +190,16 @@
         }
 
         toc.remove();
+
+        // var tocli = $(".post-toc li");
+        // console.log(tocli);
+
+        var tocSidbar = '<aside class="post-widget"><nav class="post-toc-wrap" id="post-toc"><h4>TOC</h4><ol class="post-toc">'+toc.html()+'</nav></aside>';
+
+        var target=$(".body-wrap");
+        target.prepend(tocSidbar);
+
+        
         
     });
 </script>
